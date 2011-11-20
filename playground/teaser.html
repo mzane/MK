@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Teaser-Test</title>
+</head>
+<body>
+<div>
+	<img src="../static/img/matthiaskrumm-portrait.jpg">
+	<h2><a href="teaser-target.html" target="_blank" data-wainfo="lpos=teaser1">Teaser 1</a></h2>
+	<p>jasl fsjkalfklja sdj as fsd fasdfasdf</p>
+</div>
+<div>
+	<img src="../static/img/matthiaskrumm-portrait.jpg">
+	<h2><a href="teaser-target.html" target="_blank" data-wainfo="lpos=teaser2">Teaser 2</a></h2>
+	<p>jasl fsjkalfklja sdj as fsd fasdfasdf</p>
+</div>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script>
+	ui = {};
+	ui.coremId = "1";
+	ui.waInfo = {
+		ssec: "/gm1/themen",
+		sreg: "de",
+		category: "startpage"
+	};
+
+	$("div").each(function() {
+		$(this).css({
+			cursor: "pointer"
+		}).bind("mouseover mouseout click", function(event) {
+			switch(event.type) {
+				case "mouseover":
+				    $(this).css({
+					    "background-color": "#CCC"
+				    });
+					break;
+				case "mouseout":
+				    $(this).css({
+					    "background-color": "transparent"
+				    });
+					break;
+				case "click":
+					event.stopPropagation();
+
+					var $div = $(this);
+					var $a = $div.find(":header a");
+					$a.click(function(event) {
+						event.stopPropagation();
+					});
+
+					// Variant 1
+					/*$div.css({
+						position: "relative"
+					});
+					$a.css({
+						position: "absolute",
+						height: $div.height()
+					});*/
+
+					// Variant 2
+					/*var ts = Math.random();
+					$(this).wrap('<a id="teaser-click-wrapper-' + ts + '" href="' + $a.attr("href") + '" target="' + $a.attr("target") + '"></a>');
+					$("#teaser-click-wrapper-" + ts).click();*/
+
+
+					// 1. Find out whether user clicked on link, text or img (ltype=event.target)
+					// 2. Fill sessionStorage (graceful degradate to cookie and hash) with ui.waInfo.ssec/.sreg, data-wainfo and ltype
+					// 3. Trigger window.location.href (or one of the variants above)
+
+					break;
+			}
+		});
+	});
+</script>
+
+</body>
+</html>

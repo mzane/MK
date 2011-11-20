@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>translate3d</title>
+	<style>
+		/*#img {
+			-webkit-transition: 'all 300ms cubic-bezier(0.000, 0.000, 0.315, 1.000)';
+			-webkit-transform: translate3d('40px', 0, 0);
+		}*/
+	</style>
+</head>
+<body>
+	<img src="http://lorempixel.com/400/600/" alt="" id="dodo">
+
+
+	<script>
+		var ui = {};
+		ui.useCssTransform = function (animatedObject, newXPos, newYPos) {
+			var accelCode1 = '',
+				accelCode2 = '',
+				transitionText = '',
+				transformText = '';
+
+			accelCode1 = '3d';
+			accelCode2 = ', 50px';
+
+//			if (ui.transformExists){
+				transitionText = 'all 300ms cubic-bezier(0.000, 0.000, 0.315, 1.000)';
+				transformText = 'translate' + accelCode1 + '(' + newXPos + '%, ' + newYPos + '%' + accelCode2 + ')';
+//			transformText = "skewY(50deg)";
+				console.log(transformText);
+				animatedObject.style.webkitTransition = transitionText;
+				animatedObject.style.MozTransition = transitionText;
+				animatedObject.style.OTransition = transitionText;
+//				setTimeout(function(){
+					animatedObject.style.webkitTransform = transformText;
+					animatedObject.style.MozTransform = transformText;
+					animatedObject.style.OTransform = transformText;
+//				}, 10);
+			/*} else {
+				animatedObject.style.left += newXPos;
+				animatedObject.style.top += newYPos;
+			}*/
+		};
+
+		var i = document.getElementById('dodo');
+//		ui.useCssTransform(i, 30, 30);
+	</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+# Make php5 the default
+AddType x-mapp-php5 .php
+AddHandler x-mapp-php5 .php
+
+# deaktiviert die "Namensvervollständigung" bzw. das "autom. Finden ähnlicher Dateiennamen":
+CheckSpelling off
+
+
+# Rewrites
+Options -MultiViews
+RewriteEngine on
+
+# Redirect from www. to .
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# todo: Redirect from /index.php to /
+#RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Rewrite blog posts
+RewriteCond %{REQUEST_URI} blogpost/([0-9]+)_(.*)\.php$
+RewriteRule blogpost/([0-9]+)_(.*)\.php$ /blogpost.php?postId=$1&postHeadline=$2
+
+
+# 404
+ErrorDocument 404 /error404.php
+
+
+# Password-protect iwrite.php
+<Files iwrite.php>
+	AuthName "Restricted Area"
+	AuthType Basic
+	AuthUserFile /homepages/23/d353316836/htdocs/matthiaskrumm.name/.htpasswd
+	require valid-user
+</Files>
+
+
+# Expiry-dates
+#<IfModule mod_expires.c>
+#	ExpiresActive On
+#	ExpiresByType text/css "access plus 11 years"
+#	ExpiresByType text/javascript "access plus 11 years"
+#	ExpiresByType image/png "access plus 11 years"
+#	ExpiresByType image/gif "access plus 11 years"
+#	ExpiresByType image/jpeg "access plus 11 years"
+#	ExpiresByType image/x-icon "access plus 11 years"
+#</IfModule>
+
+
+# mod_deflate
+#<IfModule mod_deflate.c>
+#	<Location />
+#		# Insert filter
+#		SetOutputFilter DEFLATE
+#
+#		# Netscape 4.x has some problems...
+#		BrowserMatch ^Mozilla/4 gzip-only-text/html
+#
+#		# Netscape 4.06-4.08 have some more problems
+#		BrowserMatch ^Mozilla/4\.0[678] no-gzip
+#
+#		# MSIE masquerades as Netscape, but it is fine
+#		# BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+#
+#		# NOTE: Due to a bug in mod_setenvif up to Apache 2.0.48
+#		# the above regex won't work. You can use the following
+#		# workaround to get the desired effect:
+#		BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
+#
+#		# Don't compress images
+#		SetEnvIfNoCase Request_URI \
+#		\.(?:gif|jpe?g|png)$ no-gzip dont-vary
+#
+#		# Make sure proxies don't deliver the wrong content
+#		Header append Vary User-Agent env=!dont-vary
+#	</Location>
+#</IfModule>

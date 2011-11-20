@@ -1,0 +1,7 @@
+# Password-protect html5formsResult.php
+<Files html5formsResult.php>
+AuthName "Restricted Area"
+AuthType Basic
+AuthUserFile /homepages/23/d353316836/htdocs/matthiaskrumm.name/playground/html5/.htpasswd
+require valid-user
+</Files>

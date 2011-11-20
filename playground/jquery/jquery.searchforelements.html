@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+	<title>jQuery searchForElements</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.searchforelements.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var fileList = new Array("http://matthiaskrumm.name/", "http://matthiaskrumm.name/contact.php");
+			var searchString = new Array("article p", "#hcard-Matthias-Krumm");
+			$.searchForElements(fileList, searchString);
+
+			// Tester
+			$("#form-css-selector").bind("submit", function(event) {
+				event.preventDefault();
+				$.searchForElements(fileList, [$("#css-selector").val()]);
+			});
+		});
+	</script>
+</head>
+<body style="background: #FFF!important;">
+	<h1>Search for elements</h1>
+	<form id="form-css-selector">
+		<label>Teste selbst: <input type="text" name="css-selector" id="css-selector" value="article p"></label>
+		<input type="submit">
+	</form>
+	<p>Es wird gesucht nach: &quot;article p&quot;</p>
+
+</body>
+</html>

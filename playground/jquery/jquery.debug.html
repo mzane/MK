@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+	<title>jQuery Plugin: debug</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.debug.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$.debug("voll debug hier!");
+			$.debug($("#hallo"));
+			$.debug("voll debug hier 2!");
+			$.debug($(".dodo"));
+			$.debug("voll debug hier 2!", "red");
+			$.debug("");
+			$.debug();
+		});
+	</script>
+	<style type="text/css">
+		#hallo {
+			color: red;
+			border: dashed 3px black;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+
+<div id="hallo">hallo</div>
+
+<div class="dodo">kacka</div>
+
+<div><a href="javascript://;" onclick="$.debug(this);return false;">klick</a></div>
+
+
+</body>
+</html>

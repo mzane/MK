@@ -1,0 +1,2 @@
+<iframe src="http://www.facebook.com/plugins/like.php?href={$url}&amp;layout=standard&amp;show_faces=false&amp;width={$width|default:300}&amp;action=like&amp;colorscheme=light&amp;height=35" style="border:none; overflow:hidden; width:{$width|default:300}px; height:35px;" class="fb-like-button"></iframe>
+{*<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-lang="de">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>*}

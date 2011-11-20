@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+	<title>jQuery-Plugin onActivation</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.onactivation.min.js"></script>
+	<script type="text/javascript">
+		function doSomething() {
+			if (typeof console !== "undefined") console.log("a was clicked!");
+		}
+
+		$(document).ready(function() {
+			$("a").onActivation(function() { doSomething(); });
+		});
+	</script>
+</head>
+<body>
+	<a href="http://matthiaskrumm.name">open Firebug and doubleclick me</a>
+</body>
+</html>
