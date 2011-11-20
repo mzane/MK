@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8>
+	<title>Flippie</title>
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<style>
+		article, aside, figure, footer, header, hgroup,
+		menu, nav, section { display: block; }
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: #EEE;
+			color: #262626;
+			font: normal 12px/16px helvetica,arial,verdana,sans-serif;
+			padding: 10px;
+		}
+
+		a {
+			color: #366097;
+			text-decoration: none;
+		}
+
+		a img {
+			border: 0 none;
+		}
+
+		article {
+			padding: 4px;
+		}
+
+		h1 {
+			margin: 10px 30px;
+		}
+
+		h2 {
+			line-height: 1.2em;
+		}
+
+		.item {
+			background-color: #FFF;
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			float: left;
+			margin: 10px;
+			padding: 20px;
+			width: 200px;
+		}
+
+		.item.dw {
+			width: 460px;
+		}
+
+		.item p {
+			max-height: 48px;
+			overflow: hidden;
+		}
+
+		.item.dh p {
+			max-height: 96px;
+			overflow: hidden;
+		}
+
+		.item img {
+			float: left;
+			margin-right: 10px;
+		}
+
+		.item h2 {
+			margin-bottom: 8px;
+		}
+
+		.item.hover {
+			background: #FFF url(link.png) right bottom no-repeat;
+			-webkit-box-shadow: 0 0 10px 1px #9E9E9E;
+			-moz-box-shadow: 0 0 10px 1px #9E9E9E;
+			box-shadow: 0 0 10px 1px #9E9E9E;
+			cursor: pointer;
+		}
+
+		#article {
+			background-color: #FFF;
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			display: none;
+			margin: 10px;
+			padding: 20px;
+		}
+
+		#article:after{
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+		}
+
+		#article img {
+			float: left;
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
+
+		#article h2 {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Flippie</h1>
+	<div id="container">
+		<article id="article"></article>
+
+		<article class="item dh" id="content1">
+			<h2><a href="#content1">Headline 1</a></h2>
+			<p>Lebowski ipsum dolor sit amet, consectetur adipiscing elit praesent ac magna. Vee belief in nossing, Lebowski! Justo pellentesque ac lectus quis elit blandit fringilla a. Walter, you can't do that. These guys're like me, they're pacifists. Smokey was a conscientious objector. Ut turpis praesent felis ligula, malesuada suscipit malesuada non, Hey, relax man, I'm a brother shamus. Ultrices non urna sed orci ipsum, placerat id condimentum. Where's my goddamn money, you bum?!
+				        <br><br>
+Rutrum, rhoncus ac lorem. Does this place look like I'm fucking married? Aliquam placerat posuere neque, JUST BECAUSE WE'RE BEREAVED DOESN'T MEAN WE'RE SAPS! He suspects that the culprits might be the very people who, uh, soiled your rug, and you're in a unique position to confirm or, uh, disconfirm that suspicion. At dignissim magna ullamcorper. In aliquam sagittis massa. You might fool the fucks in the league office, but you don't fool Jesus!
+				<br><br>
+Just me and Charlie, man, eyeball to eyeball. Ac tortor ultrices faucibus. Mind if I smoke a jay? Curabitur eu mi sapien, Ut ultricies ipsum morbi. You're going to enter a world of pain, son. We know that this is your homework. We know you stole a car. Eget risus nulla nullam. …which would place him high in the runnin' for laziest worldwide—but sometimes there's a man… sometimes there's a man.
+<br><br>
+Vel nisi enim, vel. My point, Dude, is why should we settle for twenty grand when we can keep the entire million. Am I wrong? Every time a rug is micturated upon in this fair city, I have to compensate. Auctor ante morbi id. HERE'S WHAT HAPPENS, LARRY! Urna vel felis lacinia. Placerat vestibulum turpis nulla, Little matter to me that this woman chose to pursue a career in pornography.
+
+<br><br>Viverra nec volutpat ac, Donny was a good bowler, and a good man. He was… He was one of us. He was a man who loved the outdoors, and bowling, and as a surfer explored the beaches of southern California from Redondo to Calabassos. And he was an avid bowler. And a good friend. He died—he died as so many of his generation, before his time. In your wisdom you took him, Lord. As you took so many bright flowering young men, at Khe San and Lan Doc.</p>
+		</article>
+		<article class="item dw" id="content2">
+			<img src="http://lorempixel.com/200/120/" alt="" width="200" height="120">
+			<h2><a href="#content2">Headline 2</a></h2>
+			<p>ajsf ljks dlfkjasdlkjf klasdjfökljaskldfjklasdjfk ljasdlkfjklas</p>
+		</article>
+		<article class="item" id="content3">
+			<h2><a href="#content3">Turbolange echt lange Headline 3</a></h2>
+			<p>ajsf ljks dlfkjasdlkjf klasdjfökljaskldfjklas djfkljasdlkfjklasljks dlfkjasdlkjf klasdjfökljaskldfjklas djfkljasdlkfjklas</p>
+		</article>
+		<article class="item" id="content4">
+			<h2><a href="#content4">Headline 4</a></h2>
+			<p>ajsf ljks dlfkjasdlkj ddasdjfökljask ldfjklasdjfklj asdlkfjklas ddasdjfökljask ldfjklasdjfklj asdlkfjklas</p>
+		</article>
+		<article class="item" id="content5">
+			<h2><a href="#content5">Headline 5</a></h2>
+			<p>ajsf ljks dlfkjasdlkjf klasd fökljaskldfjklasdjfkljasd lkfjklas</p>
+		</article>
+	</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<script src="masonry-site/jquery.masonry.min.js"></script>
+
+	<script>
+		$('#container').masonry({
+			itemSelector: '.item',
+			columnWidth: 0
+		});
+
+		$('.item').on('mouseover', function() {
+			$(this).addClass('hover');
+		}).on('mouseout', function() {
+			$(this).removeClass('hover');
+		}).on('click', function(event) {
+			event.preventDefault();
+			window.location.hash = $(this).find('a').attr('href');
+
+			var html = $(this).html();
+			$('.item').fadeOut('fast', function() {
+				$('#article').html(html).fadeIn('fast').on('click', function() {
+					window.location.hash = '';
+					$(this).fadeOut('fast', function() {
+						$('.item').fadeIn('fast');
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>
